@@ -190,11 +190,12 @@ label > input:hover {
   background-color: #f6f6fe;
   display: flex;
   gap: 16px;
+  margin-bottom: 16px;
 }
 #controls > input {
   border: 1px solid #808080;
   border-radius: 8px;
-  padding: 8px 72px;
+  padding: 8px 60px;
   width: 150px;
   height: 40px;
 }
@@ -235,4 +236,16 @@ label > input:hover {
 }
 #controls > button:last-child:hover {
   background-color: #ff7070;
+}
+#boxes {
+  background-color: #f6f6fe;
+  border-radius: 8px;
+  padding: 28px;
+  width: 486px;
+
+  display: flex;
+  flex-direction: row;
+  gap: 44px;
+  flex-wrap: wrap;
+  justify-content: start;
 }
