@@ -26,10 +26,10 @@ const images = [
 ];
 
 const list = document.querySelector(".gallery");
+const array = [];
 
 images.forEach((image) => {
-  list.insertAdjacentHTML(
-    "beforeend",
-    `<li><img src=${image.url} width=360 height=300></li>`
-  );
+  array.push(`<li><img src=${image.url} width=360 height=300></li>`);
 });
+
+list.insertAdjacentHTML("beforeend", array.join(""));
