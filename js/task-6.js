@@ -9,19 +9,22 @@ const btn2 = document.querySelector("button[data-destroy]");
 const boxes = document.querySelector("#boxes");
 
 const createBoxes = (amount) => {
-  amount = inpt.value;
+  boxes.innerHTML = "";
+  const array = [];
+  let size = 30;
   for (let i = 0; i < amount; i++) {
-    boxes.insertAdjacentHTML("beforeend", `<div class='box-${i}'></div>`);
-    const boxColored = document.querySelector(`.box-${i}`);
-    boxColored.style.backgroundColor = getRandomHexColor();
-    boxColored.style.width = 30 + i * 10 + "px";
-    boxColored.style.height = 30 + i * 10 + "px";
+    array.push(
+      `<div style="width:${size}px; height:${size}px; background-color:${getRandomHexColor()}"></div>`
+    );
+    size += 10;
   }
+
+  boxes.insertAdjacentHTML("beforeend", `${array.join("")}`);
 };
 
 btn1.addEventListener("click", () => {
   if (1 <= inpt.value && inpt.value <= 100) {
-    createBoxes();
+    createBoxes(inpt.value);
     inpt.value = "";
   } else {
     alert("The number must be between 1 and 100");

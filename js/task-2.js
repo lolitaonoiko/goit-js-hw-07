@@ -28,14 +28,8 @@ const images = [
 const list = document.querySelector(".gallery");
 
 images.forEach((image) => {
-  const imagess = document.createElement("img");
-
-  const listItems = document.createElement("li");
-
-  imagess.src = image.url;
-  imagess.alt = image.alt;
-  imagess.style.width = 360 + "px";
-  imagess.style.height = 300 + "px";
-  list.append(listItems);
-  listItems.appendChild(imagess);
+  list.insertAdjacentHTML(
+    "beforeend",
+    `<li><img src=${image.url} width=360 height=300></li>`
+  );
 });
